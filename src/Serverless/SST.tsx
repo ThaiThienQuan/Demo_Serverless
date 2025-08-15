@@ -1,9 +1,13 @@
-export default function SST(){
-    const site =new sst.aws.StaticSite("WebDemo",{
-        path:"",
-        buildOutput:"dist",
-
-    });
-    return(<>
-    </>)
+export default function SST(app) {
+  const site = new sst.aws.StaticSite("WebDemo", {
+    path: "D:\react\my-react-app",
+    buildCommand: "npm run build",
+    buildOutput: "dist",
+    enviroment: {
+      VITE_API_URL: "https://api.demoserverless.com",
+    },
+    domain: "myviteapp.com",
+    dns:sst.cloudflare.dns()
+  });
+  app.addOutputs({WebsiteURL:site.url});
 }

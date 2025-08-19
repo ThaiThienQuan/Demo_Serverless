@@ -1,5 +1,5 @@
 export default function SST(app) {
-  const site = new sst.aws.StaticSite("WebDemo", {
+  const site = new sst.aws.StaticSite("WebDemove", {
     path: "D:\react\my-react-app",
     buildCommand: "npm run build",
     buildOutput: "dist",
